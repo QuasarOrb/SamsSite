@@ -48,7 +48,7 @@ body {
     font-size: 36px;
     text-align: center;
     background-color: rgb(40, 50, 140);
-
+    color:lightskyblue;
 
 }
 
@@ -86,5 +86,9 @@ section.home {
     border:10px solid rgb(11, 0, 128);
     border-collapse:collapse;
     
+
+}
+input {
+    margin-top: 300px;
 
 }

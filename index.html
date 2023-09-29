@@ -1,14 +1,16 @@
 <!DOCTYPE html>
     <head>
-        
-        <title>Sam's Site</title>
+        <link id = "icon" rel="icon" type="image/x-icon" href="Sam-logos.jpeg">
+        <title id = "title">Sam's Site</title>
         <link rel="stylesheet" href="style.css">
-        <link rel="icon" type="image/x-icon" href="Sam-logos.jpeg">
-
+        <script src="script.js">
+            document.getElementById("browser").innerHTML = navigator.platform;
+        </script>
     </head>
     <body> 
-        <h1>Sam's Site</h1>
-        <p>This is a site full of stuff 100% programmed by me.</p>
+        
+        <h1 id = "head">Sam's Site</h1>
+        <h4>This is a site full of stuff 100% programmed by me.</h4>
          <table style = "border:1px solid white">
             <tr>
                 <th>Title</th>
@@ -55,6 +57,11 @@
                 <td>A game I made for a game jam.</td>
             </tr>
             <tr>
+                <td><a href = "choose.html">Choose your own Adventure</a></td>
+                <td>Text Adventure</td>
+                <td>A adventure I made to learn JavaScript</td>
+            </tr>
+            <tr>
                 <td><a href = "https://scratch.mit.edu/users/idontcare74/">Scratch Page</a></td>
                 <td>Site</td>
                 <td>My Scratch games from long ago</td>
@@ -63,7 +70,16 @@
         <p>Note: Everything works at https://quasarorb.githib.io/SamsSite. Not everything in codehs version works.
             Nothing is designed for mobile.
         </p>
+        <p id = "browser"></p>
         <img src = "Sam-logos.jpeg" width="10px">
         <a href = "https://quasarorb.github.io/SamsSite" style = "font-size: 12px">https://quasarorb.githib.io/SamsSite</a>
         <p>Made by: Samuel Smoot 2023</p>
+        <p id = "die"></p>
+        <button type="button" onclick='Cloak(false)'>Cloak</button>
+        <button type="button" onclick="window.alert('Your OS/Browser Info: ' + navigator.appVersion)">Info</button>
+        <button type="button" onclick='die()'>test</button>
+        <button type="button" id = "button2" onclick='window.alert("lol")' style = "visibility: hidden;">test2</button>
+
+
     </body>
+</html>
