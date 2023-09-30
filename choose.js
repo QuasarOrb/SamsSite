@@ -9,10 +9,11 @@ function start() {
         answers.push(prompt(question[i], ""))
     }
     
-    for(i = 0;i<=story.length - 1;i++){
+    for(i = 0;i<=story.length - 2;i++){
         document.getElementById("story").innerHTML += story[i] + answers[i]
         document.getElementById("story").innerHTML += story[i+1]
     }
+    
 
 }
 
