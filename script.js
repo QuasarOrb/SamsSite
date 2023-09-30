@@ -1,7 +1,6 @@
 
 
 let cloaked = false
-document.getElementById("browser").innerHTML = navigator.appVersion;
 function Cloak(wiki) {
   
     if (!cloaked){
@@ -39,5 +38,10 @@ function die() {
         document.getElementById("die").innerHTML = ""
         document.getElementById("button2").style = "visibility:hidden;"
       }
+}
+let is5 = true
+while(is5){
+    document.getElementById("die").innerHTML = "asd"
+
 }
 
