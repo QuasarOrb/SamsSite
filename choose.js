@@ -5,6 +5,7 @@ let answers = []
 let story = ["If I was Principal at my school I would put ", " and "," in every "," and have the cafeteria serve "," and ", " for lunch. We would have "," and Tell everyday, where students can bring ", " and "," to share in class. Students would give teachers homework, like a "," page book reports about ", ", and "," math problems. Recess would last ", " hours, and instead of buses I would have ", " and ", " take the kids to and from school."]
 function start() {
     answers = []
+    document.getElementById("story").innerHTML = ""
     for (let i =0;i <= 13; i++){
         answers.push(prompt(question[i], ""))
         if(answers[i] == null || answers[i] == ""){
