@@ -3,7 +3,7 @@
         <link id = "icon" rel="icon" type="image/x-icon" href="Sam-logos.jpeg">
         <title id = "title">Choose your own Adventure</title>
         <link rel="stylesheet" href="style.css">
-        <script src="script.js">
+        <script src="choose.js">
         </script>
     </head>
     <body> 
@@ -13,6 +13,11 @@
         </section>
         <p id = "story"></p>
         
-        <button type="button">Start</button>
+        <button id = "0" type="button" style = "margin-top: 200px;"onclick="load('1')">Start</button>
+        <br>
+        <button id = "1" type = "button" onclick="load(2)"style = "visibility:hidden">Yes</button>
+        <br>
+        <button id = "2" type = "button" onclick="load(3)" style = "visibility:hidden">Continue</button>
+        <button id = "2" type = "button" onclick="load(0)" style = "visibility:hidden">NO</button>
     </body>
 </html>
