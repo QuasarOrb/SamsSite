@@ -31,7 +31,7 @@ function Cloak(wiki) {
 
 
 function die() {
-    if (confirm("Die?")) {
+    if (confirm("Test?")) {
         document.getElementById("die").innerHTML = "Hmm..."
         document.getElementById("button2").style = "visibility:visible;"
 
