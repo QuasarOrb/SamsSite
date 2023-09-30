@@ -7,6 +7,9 @@ function start() {
     
     for (let i =0;i <= 13; i++){
         answers.push(prompt(question[i], ""))
+        if(answers[i] == null){
+            return
+        }
     }
     
     for(i = 0;i<=story.length - 2;i++){
