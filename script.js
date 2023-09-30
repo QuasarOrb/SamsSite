@@ -6,7 +6,7 @@ function Cloak(wiki) {
     if (!cloaked){
         document.getElementById("icon").href = "download.png"
         document.getElementById("title").innerHTML = "Canvas"
-        document.getElementById("head").innerHTML = "Canvas"
+        document.getElementById("head").innerHTML = "Cloaked :)"
         cloaked = true
     }else {
         if (wiki){
