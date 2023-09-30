@@ -11,9 +11,9 @@ function start() {
     
     for(i = 0;i<=story.length - 2;i++){
         document.getElementById("story").innerHTML += story[i] + answers[i]
-        document.getElementById("story").innerHTML += story[i+1]
+        
     }
-    
+    document.getElementById("story").innerHTML += story[story.length - 1]
 
 }
 
