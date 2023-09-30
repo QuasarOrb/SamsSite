@@ -9,6 +9,7 @@
 }
 
 body {
+    font-size: large;
     font-family: 'Cabin', sans-serif;
     text-align: center;
     background-color: rgb(40, 50, 140);
@@ -46,6 +47,9 @@ table,th,td {
     border-collapse: collapse;
     
 }
+td {
+    width: 250px;
+}
 /*
 .heading:hover {
     color: aquamarine;
@@ -53,7 +57,7 @@ table,th,td {
 */
 a:hover {
     color:whitesmoke;
-    font-size: 86%;
+   
     font-family: 'Mooli', sans-serif;
 
 }
