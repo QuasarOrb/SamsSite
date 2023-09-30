@@ -1,4 +1,7 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mooli&family=Pixelify+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
 :root {
     --text-color:lightskyblue;
 
@@ -6,7 +9,7 @@
 }
 
 body {
-    
+    font-family: 'Cabin', sans-serif;
     text-align: center;
     background-color: rgb(40, 50, 140);
     color:var(--text-color);
@@ -50,7 +53,9 @@ table,th,td {
 */
 a:hover {
     color:whitesmoke;
-    font-size: 95%;
+    font-size: 86%;
+    font-family: 'Mooli', sans-serif;
+
 }
 button:hover{
     background-color: aquamarine;
