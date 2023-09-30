@@ -33,15 +33,14 @@ function die() {
     if (confirm("Test?")) {
         document.getElementById("die").innerHTML = "Hmm..."
         document.getElementById("button2").style = "visibility:visible;"
-
+        for (let i = 1;i<=3;i++){
+        document.getElementById("toanimate"+i).className = "animated"
+        }
+        //window.alert(document.getElementById("toanimate").className)
       } else {
         document.getElementById("die").innerHTML = ""
         document.getElementById("button2").style = "visibility:hidden;"
       }
 }
-let is5 = true
-while(is5){
-    document.getElementById("die").innerHTML = "asd"
 
-}
 
