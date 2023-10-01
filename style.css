@@ -9,10 +9,13 @@
 }
 #rocket {
     filter: invert(100%);
-    /*filter: drop-shadow(1px 1px 0px lightskyblue);*/
+    /**/
     
     
     height: 13px;
+}
+#rocket:hover {
+    filter: drop-shadow(1px 1px 0px lightskyblue);
 }
 body {
     font-size: large;
