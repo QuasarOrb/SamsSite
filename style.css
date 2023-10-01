@@ -7,7 +7,13 @@
 
 
 }
-
+#rocket {
+    filter: invert(100%);
+    /*filter: drop-shadow(1px 1px 0px lightskyblue);*/
+    
+    
+    height: 13px;
+}
 body {
     font-size: large;
     font-family: 'Cabin', sans-serif;
