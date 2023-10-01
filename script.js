@@ -27,6 +27,10 @@ function Cloak(wiki) {
      }
 }
 
+function diel() {
+    window.alert("lol")
+    document.getElementById("rocketnanim").id = "rocketanim"
+}
 
 
 function die() {
@@ -36,11 +40,10 @@ function die() {
         for (let i = 1;i<=3;i++){
         document.getElementById("toanimate"+i).className = "animated"
         }
-        //window.alert(document.getElementById("toanimate").className)
+        
       } else {
         document.getElementById("die").innerHTML = ""
         document.getElementById("button2").style = "visibility:hidden;"
       }
 }
-
 

@@ -17,14 +17,43 @@
 #rocket:hover {
     filter: drop-shadow(1px 1px 0px lightskyblue);
 }
+#rocketnanim {
+    visibility: hidden;
+}
+#rocketanim {
+    position: fixed;
+    visibility: visible;
+    animation:rocketmove 4s;
+    animation-iteration-count: infinite;
+}
+@keyframes rocketmove {
+    0%   {background-color:red; left:0px; top:0px;}
+  25%  {background-color:yellow; left:98%; top:0px;}
+  50%  {background-color:blue; left:98%; top:97%;}
+  75%  {background-color:green; left:0px; top:97%;}
+  100% {background-color:red; left:0px; top:0px;}
+}
 body {
     font-size: large;
     font-family: 'Cabin', sans-serif;
     text-align: center;
     background-color: rgb(40, 50, 140);
     color:var(--text-color);
-
+    animation: colorbchange 7s; 
+    animation-iteration-count: infinite;
 }
+@keyframes colorbchange {
+    from {
+        background-color: rgb(40, 50, 140);
+    }
+    50%{
+        background-color:rgb(0, 50, 100);
+    }
+    to {
+        background-color: rgb(40, 50, 140);
+
+    }
+   }
 a {
     color:var(--text-color);
 
