@@ -27,7 +27,7 @@ function Cloak(wiki) {
      }
 }
 
-function diel() {
+function die1() {
     window.alert("lol")
     document.getElementById("rocketnanim").id = "rocketanim"
 }
