@@ -1,6 +1,6 @@
 
 
-let question = ["Toy (plural)","Musical Instrument (plural)", "noun","food (plural)","food plural)","verb","animal (plural)","plural noun","number", "plural noun","number","number","vehicle (plural)","animal (plural)"]
+let question = ["Toy (plural)","Musical Instrument (plural)", "noun","food (plural)","food (plural)","verb","animal (plural)","plural noun","number", "plural noun","number","number","vehicle (plural)","animal (plural)"]
 let answers = []
 let story = ["If I was Principal at my school I would put ", " and "," in every "," and have the cafeteria serve "," and ", " for lunch. We would have "," and Tell everyday, where students can bring ", " and "," to share in class. Students would give teachers homework, like a "," page book reports about ", ", and "," math problems. Recess would last ", " hours, and instead of buses I would have ", " and ", " take the kids to and from school."]
 function start() {
