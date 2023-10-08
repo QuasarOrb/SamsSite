@@ -34,39 +34,16 @@
   100% {background-color:red; left:0px; top:0px;}
 }
 body {
-    background-image:linear-gradient( rgb(40, 50, 140), rgb(0, 157, 255));
+    background-image:linear-gradient( rgb(40, 50, 140), rgb(0, 0, 0));
 
     font-size: large;
     font-family: 'Cabin', sans-serif;
     text-align: center;
     background-color: rgb(40, 50, 140);
     color:var(--text-color);
-    animation: colorbchange 7s; 
    
 }
-@keyframes colorbchange {
-    from {
-        color:var(--text-color);
 
-
-        background-image:linear-gradient( rgb(40, 50, 140), rgb(0, 157, 255));
-    }
-    25%{
-
-    }
-    50%{
-        background-image:linear-gradient( rgb(40, 50, 140), rgb(0, 157, 255));
-        
-    }
-    75% {
-
-    }
-    to {
-        background-image:linear-gradient( rgb(40, 50, 140), rgb(0, 157, 255));
-        color:var(--text-color);
-
-    }
-   }
 a {
     color:var(--text-color);
 
@@ -95,12 +72,13 @@ table,th,td {
     margin-left: auto;
     margin-right: auto;
     color:var(--text-color);
-    border: 3px solid rgb(100, 100, 190);
+    border: 3px solid transparent;
     border-collapse: collapse;
     
 }
 td {
-    width: 250px;
+    height: 180px;
+    width: 380px;
 }
 
 .heading:hover {
@@ -153,6 +131,81 @@ h2{
 button {
     border-radius: 10px;
     border-style: ridge;
+}
+
+
+
+
+
+ /*
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+*/
+.wrapper {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    
+
+}
+a.button {
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    padding: 25px 30px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: lightskyblue;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: .5s;
+    overflow: hidden;
+    margin-right: 70px;
+
+}
+a.button:hover {
+   /* background-color: darkblue; */
+    color: black;
+    box-shadow: 0 0 5px blue,
+                0 0 25px blue
+                0 0 50px blue
+                0 0 200px blue;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, black);
+}
+/*
+a.button:first-child {
+    filter: hue-rotate(225deg);
+}
+a.button:last-child {
+    filter: hue-rotate(90deg);
+}
+*/
+a span{
+    position: absolute;
+    display: block;
+}
+a span:nth-child(1) {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg,transparent,blue);
+    animation: animate1 5s infinite;
+}
+@keyframes animate1 {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
 }
 
 
