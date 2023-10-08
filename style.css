@@ -171,7 +171,7 @@ a.button {
 
 }
 a.button:hover {
-   background-color:rgba(76, 175, 80, 0.3);
+   background-color:rgba(74, 81, 179, 0.3);
     color: black;
     box-shadow: 0 0 5px blue,
                 0 0 25px blue
