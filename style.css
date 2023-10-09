@@ -129,6 +129,8 @@ h2{
 button {
     border-radius: 10px;
     border-style: ridge;
+    background-color: darkblue;
+    color: lightskyblue;
 }
 
 
