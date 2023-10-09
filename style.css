@@ -94,7 +94,7 @@ a:hover {
 button:hover{
     animation: colorchange 7s; 
     animation-iteration-count: infinite;
-    background-color: aquamarine;
+    background-color: blue;
 }
 
 
