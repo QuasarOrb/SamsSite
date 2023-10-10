@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mooli&family=Pixelify+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
+
 :root {
     --text-color:lightskyblue;
 
@@ -146,6 +147,18 @@ button {
     text-decoration: none;
 }
 */
+
+
+
+
+
+
+
+
+
+
+
+
 .wrapper {
     
     display: flex;
@@ -187,6 +200,8 @@ a.button:last-child {
     filter: hue-rotate(90deg);
 }
 */
+
+
 a span{
     position: absolute;
     display: block;
@@ -197,7 +212,7 @@ a span:nth-child(1) {
     width: 100%;
     height: 1px;
     background: linear-gradient(90deg,transparent,blue);
-    animation: animate1 5s infinite;
+    animation: animate1 3s infinite;
 }
 @keyframes animate1 {
     0% {
@@ -217,7 +232,7 @@ h4 span:nth-child(1) {
     width: 100%;
     height: 1px;
     background: linear-gradient(90deg,transparent,blue);
-    animation: animate1 5s infinite;
+    animation: animate1 3s infinite;
 }
 h4 {
    
