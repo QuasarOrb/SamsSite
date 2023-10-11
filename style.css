@@ -298,7 +298,7 @@ img.album {
     translate: -50% -50%;
     border-radius: 50%;
     z-index: -1;
-    animation: rotate 20s infinite;
+    animation: rotate 4s infinite;
 }
 
 
