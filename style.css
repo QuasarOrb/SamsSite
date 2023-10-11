@@ -5,7 +5,9 @@
 
 :root {
     --text-color:lightskyblue;
-
+    --button-color:#1F305E;
+    --button-text-color:lightskyblue;
+    --button-animation-color:#A1C6EA;
 
 }
 #rocket {
@@ -35,7 +37,7 @@
   100% {background-color:red; left:0px; top:0px;}
 }
 body {
-    background-image:linear-gradient( #7e3f8f, #1c39bb); 
+    background-image:linear-gradient( #20002c, #1c39bb); 
 
     font-size: large;
     font-family: 'Cabin', sans-serif;
@@ -184,8 +186,8 @@ a.button {
 
 }
 a.button:hover {
-   background-color:#8EA8C3;
-     color:  rgb(46, 46, 88) !important;
+   background-color:var(--button-color);
+     color: var(--button-text-color) !important;
     box-shadow: 0 0 5px blue,
                 0 0 25px blue
                 0 0 50px blue
@@ -211,7 +213,7 @@ a span:nth-child(1) {
     left: 0;
     width: 100%;
     height: 1px;
-    background: linear-gradient(90deg,transparent,#8EA8C3);
+    background: linear-gradient(90deg,transparent,var(--button-animation-color));
     animation: animate1 3s infinite;
 }
 @keyframes animate1 {
@@ -231,7 +233,7 @@ h4 span:nth-child(1) {
     left: 0;
     width: 100%;
     height: 1px;
-    background: linear-gradient(90deg,transparent,#8EA8C3);
+    background: linear-gradient(90deg,transparent,var(--button-animation-color));
     animation: animate1 3s infinite;
 }
 h4 {
@@ -277,6 +279,27 @@ img.album {
     }
 }
 
+
+
+
+
+
+
+
+
+
+#blob {
+    background-color:darkblue;
+   filter: blur(200px);
+    height: 500px;
+    aspect-ratio: 2;
+    position:fixed;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    border-radius: 50%;
+    z-index: -1;
+}
 
 
 
