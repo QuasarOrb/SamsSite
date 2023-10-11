@@ -35,7 +35,7 @@
   100% {background-color:red; left:0px; top:0px;}
 }
 body {
-    background-image:linear-gradient( #1c39bb,#7e3f8f); 
+    background-image:linear-gradient( #7e3f8f, #1c39bb); 
 
     font-size: large;
     font-family: 'Cabin', sans-serif;
@@ -184,8 +184,8 @@ a.button {
 
 }
 a.button:hover {
-   background-color:rgba(74, 81, 179, 0.3);
-    color: black;
+   background-color:#8EA8C3;
+     color:  rgb(46, 46, 88) !important;
     box-shadow: 0 0 5px blue,
                 0 0 25px blue
                 0 0 50px blue
@@ -211,7 +211,7 @@ a span:nth-child(1) {
     left: 0;
     width: 100%;
     height: 1px;
-    background: linear-gradient(90deg,transparent,blue);
+    background: linear-gradient(90deg,transparent,#8EA8C3);
     animation: animate1 3s infinite;
 }
 @keyframes animate1 {
@@ -231,7 +231,7 @@ h4 span:nth-child(1) {
     left: 0;
     width: 100%;
     height: 1px;
-    background: linear-gradient(90deg,transparent,blue);
+    background: linear-gradient(90deg,transparent,#8EA8C3);
     animation: animate1 3s infinite;
 }
 h4 {
