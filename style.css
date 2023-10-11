@@ -35,12 +35,12 @@
   100% {background-color:red; left:0px; top:0px;}
 }
 body {
-    background-image:linear-gradient( rgb(40, 50, 140), rgb(0, 0, 0));
+    background-image:linear-gradient( rgb(115, 0, 255), rgb(53, 77, 89)); 
 
     font-size: large;
     font-family: 'Cabin', sans-serif;
     text-align: center;
-    background-color: rgb(40, 50, 140);
+    background-color:black;
     color:var(--text-color);
    
 }
@@ -103,12 +103,12 @@ button:hover{
 
 
 .heading {
-    background-color: slateblue;
+   /* background-color:rgb(0, 0, 85); */
    
     margin-left: auto;
     margin-right: auto;
-    border:10px solid slateblue;
-    border-radius: 10px;
+   /* border:10px solid rgb(0, 0, 85);
+    border-radius: 10px; */
     text-align: center;
     width: fit-content;
 
@@ -257,6 +257,25 @@ img.album {
 
 
 
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
+    transition-delay: 0;
+}
+.show {
+    filter: blur(0px);
+    transform: translateX(0);
+
+    opacity: 1;
+
+}
+@media(prefers-reduced-motion) {
+    .hidden {
+        transition: none;
+    }
+}
 
 
 
