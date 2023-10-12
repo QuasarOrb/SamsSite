@@ -292,9 +292,10 @@ img.album {
    filter: blur(100px);
     height: 300px;
     aspect-ratio: 1.5;
-    position:fixed;
+    /* change to fixed if it is following mouse absolute if not*/
+    position:absolute;
     left: 50%;
-    top: 50%;
+    top: 0;
     translate: -50% -50%;
     border-radius: 50%;
     z-index: -1;

@@ -71,6 +71,15 @@ hiddenElements.forEach((el) => observer.observe(el))
 
 
 
+
+
+
+
+
+/*
+
+uncomment to make blob go to mouse
+
 const blob = document.getElementById("blob");
 
 document.body.onpointermove = event => {
@@ -85,3 +94,4 @@ document.body.onpointermove = event => {
     
 }
 
+*/
