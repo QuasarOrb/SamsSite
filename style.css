@@ -292,7 +292,7 @@ img.album {
     background-image: linear-gradient(rgb(55, 0, 255),rgb(32, 107, 17));
    filter: blur(100px);
     height: 500px;
-    aspect-ratio: 1;
+    aspect-ratio: 1.5;
     /* change to fixed if it is following mouse absolute if not*/
     position:absolute;
     left: 50%;
