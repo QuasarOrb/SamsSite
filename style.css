@@ -254,9 +254,14 @@ h4 {
 
 
 img.album {
-    width: 90%;
+    width: 80%;
+
 }
 
+img.album:hover {
+    width: 82%;
+
+}
 
 
 .hidden {
@@ -311,3 +316,7 @@ img.album {
         rotate:360deg;
     }
 }
+
+
+
+
