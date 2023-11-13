@@ -185,6 +185,7 @@ a.button {
     transition: .5s;
     overflow: hidden;
     margin-right: 70px;
+    margin-left: 70px;
 
 }
 a.button:hover {
@@ -298,7 +299,7 @@ img.album:hover {
 #blob {
     background-image: linear-gradient(rgb(55, 0, 255),rgb(32, 107, 17));
    filter: blur(100px);
-    height: 500px;
+    height: 50%;
     aspect-ratio: 1.5;
     /* change to fixed if it is following mouse absolute if not*/
     position:absolute;
