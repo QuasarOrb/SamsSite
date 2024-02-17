@@ -80,7 +80,7 @@ table,th,td {
     color:var(--text-color);
     border: 3px solid transparent;
     border-collapse: collapse;
-    width: auto;
+    width: fit-content;
     
 }
 td {
