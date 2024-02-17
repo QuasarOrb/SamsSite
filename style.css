@@ -84,7 +84,7 @@ table,th,td {
 }
 td {
     height: 200px;
-    width: 380px;
+    width: auto;
 }
 
 
