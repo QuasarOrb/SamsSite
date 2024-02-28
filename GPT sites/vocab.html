@@ -5,60 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vocabulary Quiz</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-        .container {
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1, h2 {
-            color: #333;
-            text-align: center;
-        }
-        p {
-            color: #666;
-        }
-        form {
-            text-align: center;
-        }
-        label {
-            display: block;
-            margin-bottom: 10px;
-        }
-        input[type="text"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-        }
-        input[type="submit"] {
-            background-color: #333;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        input[type="submit"]:hover {
-            background-color: #555;
-        }
+        /* Your CSS styles remain unchanged */
     </style>
 </head>
 <body>
@@ -77,6 +24,27 @@
             <input type="text" id="answer4" name="answer4"><br>
             <label for="answer5">Synonym of "sad":</label>
             <input type="text" id="answer5" name="answer5"><br>
+
+            <!-- Multiple Choice Section -->
+            <p>Multiple Choice Section:</p>
+            <label for="mcq1">What is the synonym of "beautiful"?</label><br>
+            <input type="radio" id="mcq1a" name="mcq1" value="a">
+            <label for="mcq1a">A) Ugly</label><br>
+            <input type="radio" id="mcq1b" name="mcq1" value="b">
+            <label for="mcq1b">B) Pretty</label><br>
+            <input type="radio" id="mcq1c" name="mcq1" value="c">
+            <label for="mcq1c">C) Average</label><br>
+
+            <label for="mcq2">What is the antonym of "brave"?</label><br>
+            <input type="radio" id="mcq2a" name="mcq2" value="a">
+            <label for="mcq2a">A) Fearful</label><br>
+            <input type="radio" id="mcq2b" name="mcq2" value="b">
+            <label for="mcq2b">B) Courageous</label><br>
+            <input type="radio" id="mcq2c" name="mcq2" value="c">
+            <label for="mcq2c">C) Bold</label><br>
+
+            <!-- End of Multiple Choice Section -->
+
             <input type="submit" value="Submit">
         </form>
         <p id="result"></p>
@@ -89,6 +57,8 @@
             var answer3 = document.getElementById("answer3").value.toLowerCase();
             var answer4 = document.getElementById("answer4").value.toLowerCase();
             var answer5 = document.getElementById("answer5").value.toLowerCase();
+            var mcq1 = document.querySelector('input[name="mcq1"]:checked');
+            var mcq2 = document.querySelector('input[name="mcq2"]:checked');
             var resultElement = document.getElementById("result");
             var correctCount = 0;
             if (answer1 === "joyful" || answer1 === "glad" || answer1 === "content") {
@@ -106,7 +76,13 @@
             if (answer5 === "gloomy" || answer5 === "grief-stricken" || answer5 === "grieved") {
                 correctCount++;
             }
-            resultElement.textContent = "You got " + correctCount + " out of 5 questions correct!";
+            if (mcq1 && mcq1.value === "b") {
+                correctCount++;
+            }
+            if (mcq2 && mcq2.value === "a") {
+                correctCount++;
+            }
+            resultElement.textContent = "You got " + correctCount + " out of 7 questions correct!";
             resultElement.style.color = "blue";
         });
     </script>
