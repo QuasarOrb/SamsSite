@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocabulary Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #333;
+            text-align: center;
+        }
+        p {
+            color: #666;
+        }
+        form {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Vocabulary Quiz</h1>
+    </header>
+    <div class="container">
+        <form id="quizForm">
+            <label for="answer">What is the synonym of "happy"?</label>
+            <input type="text" id="answer" name="answer">
+            <input type="submit" value="Submit">
+        </form>
+        <p id="result"></p>
+    </div>
+    <script>
+        document.getElementById("quizForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var answer = document.getElementById("answer").value.toLowerCase();
+            var resultElement = document.getElementById("result");
+            if (answer === "joyful" || answer === "glad" || answer === "content") {
+                resultElement.textContent = "Correct! You're doing great!";
+                resultElement.style.color = "green";
+            } else {
+                resultElement.textContent = "Incorrect. Try again!";
+                resultElement.style.color = "red";
+            }
+        });
+    </script>
+</body>
+</html>
