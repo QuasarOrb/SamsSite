@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocabulary Quiz Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #333;
+            text-align: center;
+        }
+        p {
+            color: #666;
+        }
+        form {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Vocabulary Quiz Generator</h1>
+    </header>
+    <div class="container">
+        <form id="quizForm">
+            <input type="submit" value="Generate Quiz">
+        </form>
+        <div id="quiz"></div>
+    </div>
+    <script>
+        document.getElementById("quizForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            generateQuiz();
+        });
+
+        async function generateQuiz() {
+            // Replace 'YOUR_API_KEY' with your actual ChatGPT API key
+            const apiKey = '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';
+
+            // Check if API key is provided
+            if (!apiKey || apiKey === 'YOUR_API_KEY') {
+                alert("Please provide a valid API key.");
+                return;
+            }
+
+            // Generate a random word
+            const randomWords = ["happy", "big", "brave", "fast", "sad"];
+            const randomIndex = Math.floor(Math.random() * randomWords.length);
+            const word = randomWords[randomIndex];
+
+            // Call ChatGPT API to generate questions based on the random word
+            const response = await fetch("https://api.openai.com/v1/completions", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer " + apiKey
+                },
+                body: JSON.stringify({
+                    "model": "text-davinci-003",
+                    "prompt": "Generate a synonym and an antonym for the word '" + word + "'.",
+                    "max_tokens": 50,
+                    "temperature": 0.7,
+                    "n": 1
+                })
+            });
+
+            // Handle response
+            if (!response.ok) {
+                alert("Failed to fetch data. Please check your API key.");
+                return;
+            }
+
+            const data = await response.json();
+            const output = data.choices[0].text.trim();
+
+            // Parse the output to extract synonym and antonym
+            const match = output.match(/Synonym: (.+?) Antonym: (.+)/i);
+            const synonym = match ? match[1].trim() : "N/A";
+            const antonym = match ? match[2].trim() : "N/A";
+
+            // Display the generated quiz
+            const quizElement = document.getElementById("quiz");
+            quizElement.innerHTML = `
+                <h2>Quiz Generated for the Word: ${word}</h2>
+                <p>Synonym: ${synonym}</p>
+                <p>Antonym: ${antonym}</p>
+            `;
+        }
+    </script>
+</body>
+</html>
