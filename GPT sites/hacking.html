@@ -36,70 +36,74 @@
 <body>
 <div class="container">
     <div class="text" id="terminal">
-        Hacking into mainframe...
-        <br>
-        Access granted.
-        <br>
-        Initiating data extraction...
-        <br>
-        Extracting sensitive information...
-        <br>
-        ██████████████████████
-        <br>
-        Data extraction complete.
-        <br>
-        Thank you for using our services.
     </div>
 </div>
 
 <script>
 // Function to simulate typing effect
-function typeWriter(text, i, speed) {
-    if (i < text.length) {
-        document.getElementById("terminal").innerHTML += text.charAt(i);
+function typeWriter(text, speed) {
+    var i = 0;
+    var terminal = document.getElementById("terminal");
+    terminal.textContent = ""; // Clear terminal content before typing new text
+    var intervalId = setInterval(function() {
+        terminal.textContent += text.charAt(i);
         i++;
-        setTimeout(function() {
-            typeWriter(text, i, speed);
-        }, speed);
-    }
+        if (i === text.length) {
+            clearInterval(intervalId);
+        }
+    }, speed);
 }
 
 // Simulate hacking process
-setTimeout(function() {
-    typeWriter("\nLogin: root\nPassword: ********\n\nWelcome to the mainframe terminal.\n", 0, 50);
-}, 1000);
+function simulateHacking() {
+    setTimeout(function() {
+        typeWriter("\nLogin: root\nPassword: ********\n\nWelcome to the mainframe terminal.\n", 50);
+    }, 1000);
 
-setTimeout(function() {
-    typeWriter("\n> Analyzing security protocols...\n", 0, 50);
-}, 3000);
+    setTimeout(function() {
+        typeWriter("\n> Analyzing security protocols...\n", 50);
+    }, 3000);
 
-setTimeout(function() {
-    typeWriter("> Bypassing firewall...\n", 0, 50);
-}, 6000);
+    setTimeout(function() {
+        typeWriter("> Bypassing firewall...\n", 50);
+    }, 6000);
 
-setTimeout(function() {
-    typeWriter("> Access granted.\n\n", 0, 50);
-}, 9000);
+    setTimeout(function() {
+        typeWriter("> Access granted.\n\n", 50);
+    }, 9000);
 
-setTimeout(function() {
-    typeWriter("> Initiating data extraction...\n", 0, 50);
-}, 12000);
+    setTimeout(function() {
+        typeWriter("> Initiating data extraction...\n", 50);
+    }, 12000);
 
-setTimeout(function() {
-    typeWriter("> Extracting sensitive information...\n", 0, 50);
-}, 15000);
+    setTimeout(function() {
+        typeWriter("> Extracting sensitive information...\n", 50);
+    }, 15000);
 
-setTimeout(function() {
-    typeWriter("███████████████████████\n", 0, 100);
-}, 18000);
+    setTimeout(function() {
+        typeWriter("███████████████████████\n", 100);
+    }, 18000);
 
-setTimeout(function() {
-    typeWriter("> Data extraction complete.\n\n", 0, 50);
-}, 20000);
+    setTimeout(function() {
+        typeWriter("> Data extraction complete.\n\n", 50);
+    }, 20000);
 
-setTimeout(function() {
-    typeWriter("Thank you for using our services.\n", 0, 50);
-}, 23000);
+    setTimeout(function() {
+        typeWriter("Thank you for using our services.\n", 50);
+    }, 23000);
+}
+
+// Call the hacking simulation function
+simulateHacking();
+
+// Event listener for spacebar keydown event
+document.addEventListener("keydown", function(event) {
+    if (event.code === "Space") {
+        // Clear terminal text and restart hacking simulation
+        document.getElementById("terminal").textContent = "";
+        simulateHacking();
+    }
+});
 </script>
 </body>
 </html>

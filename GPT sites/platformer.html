@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple Platformer Game</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    canvas {
+        display: block;
+    }
+</style>
+</head>
+<body>
+<canvas id="gameCanvas" width="800" height="600"></canvas>
+
+<script>
+// Define canvas and context
+const canvas = document.getElementById('gameCanvas');
+const ctx = canvas.getContext('2d');
+
+// Define player properties
+const player = {
+    x: 50,
+    y: 50,
+    width: 30,
+    height: 30,
+    speed: 5,
+    jumpForce: 12,
+    velocityY: 0,
+    grounded: false
+};
+
+// Define platforms
+const platforms = [
+    { x: 0, y: 200, width: 200, height: 20 },
+    { x: 300, y: 400, width: 200, height: 20 },
+    { x: 500, y: 300, width: 200, height: 20 },
+    { x: 700, y: 200, width: 200, height: 20 },
+    { x: 900, y: 100, width: 200, height: 20 },
+    { x: 1100, y: 300, width: 200, height: 20 }
+];
+
+// Define goal platform
+const goalPlatform = { x: 1300, y: 50, width: 100, height: 20 };
+
+// Define input listeners
+document.addEventListener('keydown', keyDownHandler);
+document.addEventListener('keyup', keyUpHandler);
+
+// Handle key down events
+function keyDownHandler(event) {
+    if (event.key === 'ArrowRight') {
+        player.moveRight = true;
+    } else if (event.key === 'ArrowLeft') {
+        player.moveLeft = true;
+    } else if (event.key === 'ArrowUp' && player.grounded) {
+        player.velocityY = -player.jumpForce;
+        player.grounded = false;
+    }
+}
+
+// Handle key up events
+function keyUpHandler(event) {
+    if (event.key === 'ArrowRight') {
+        player.moveRight = false;
+    } else if (event.key === 'ArrowLeft') {
+        player.moveLeft = false;
+    }
+}
+
+// Update function
+function update() {
+    // Move player horizontally
+    if (player.moveRight && player.x < canvas.width - player.width) {
+        player.x += player.speed;
+    } else if (player.moveLeft && player.x > 0) {
+        player.x -= player.speed;
+    }
+
+    // Apply gravity and check collisions
+    player.velocityY += 0.5; // Gravity
+    player.y += player.velocityY;
+
+    player.grounded = false;
+    for (const platform of platforms) {
+        if (
+            player.x < platform.x + platform.width &&
+            player.x + player.width > platform.x &&
+            player.y + player.height > platform.y &&
+            player.y < platform.y + platform.height
+        ) {
+            player.velocityY = 0;
+            player.grounded = true;
+            player.y = platform.y - player.height;
+        }
+    }
+
+    // Respawn player if they fall below the screen
+    if (player.y > canvas.height) {
+        player.x = 50;
+        player.y = 50;
+        player.velocityY = 0;
+    }
+
+    // Check if player reached goal platform
+    if (
+        player.x < goalPlatform.x + goalPlatform.width &&
+        player.x + player.width > goalPlatform.x &&
+        player.y + player.height > goalPlatform.y &&
+        player.y < goalPlatform.y + goalPlatform.height
+    ) {
+        alert('Congratulations! You reached the goal platform!');
+        document.location.reload(); // Reload the page to play again
+    }
+
+    // Render
+    draw();
+}
+
+// Draw function
+function draw() {
+    // Clear canvas
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Draw player
+    ctx.fillStyle = 'blue';
+    ctx.fillRect(player.x, player.y, player.width, player.height);
+
+    // Draw platforms
+    ctx.fillStyle = 'green';
+    for (const platform of platforms) {
+        ctx.fillRect(platform.x, platform.y, platform.width, platform.height);
+    }
+
+    // Draw goal platform
+    ctx.fillStyle = 'red';
+    ctx.fillRect(goalPlatform.x, goalPlatform.y, goalPlatform.width, goalPlatform.height);
+
+    // Draw text on the goal platform
+    ctx.fillStyle = 'white';
+    ctx.font = '20px Arial';
+    ctx.fillText('Goal!', goalPlatform.x + 25, goalPlatform.y + 18);
+}
+
+// Main game loop
+function gameLoop() {
+    update();
+    requestAnimationFrame(gameLoop);
+}
+
+// Start the game loop
+gameLoop();
+</script>
+</body>
+</html>
