@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hacking Terminal</title>
+<style>
+    body {
+        background-color: black;
+        color: green;
+        font-family: monospace;
+        font-size: 20px;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        height: 80%;
+        border: 2px solid green;
+        padding: 20px;
+        box-sizing: border-box;
+        overflow-y: scroll;
+    }
+
+    .text {
+        white-space: pre-line;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="text" id="terminal">
+        Hacking into mainframe...
+        <br>
+        Access granted.
+        <br>
+        Initiating data extraction...
+        <br>
+        Extracting sensitive information...
+        <br>
+        ██████████████████████
+        <br>
+        Data extraction complete.
+        <br>
+        Thank you for using our services.
+    </div>
+</div>
+
+<script>
+// Function to simulate typing effect
+function typeWriter(text, i, speed) {
+    if (i < text.length) {
+        document.getElementById("terminal").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(function() {
+            typeWriter(text, i, speed);
+        }, speed);
+    }
+}
+
+// Simulate hacking process
+setTimeout(function() {
+    typeWriter("\nLogin: root\nPassword: ********\n\nWelcome to the mainframe terminal.\n", 0, 50);
+}, 1000);
+
+setTimeout(function() {
+    typeWriter("\n> Analyzing security protocols...\n", 0, 50);
+}, 3000);
+
+setTimeout(function() {
+    typeWriter("> Bypassing firewall...\n", 0, 50);
+}, 6000);
+
+setTimeout(function() {
+    typeWriter("> Access granted.\n\n", 0, 50);
+}, 9000);
+
+setTimeout(function() {
+    typeWriter("> Initiating data extraction...\n", 0, 50);
+}, 12000);
+
+setTimeout(function() {
+    typeWriter("> Extracting sensitive information...\n", 0, 50);
+}, 15000);
+
+setTimeout(function() {
+    typeWriter("███████████████████████\n", 0, 100);
+}, 18000);
+
+setTimeout(function() {
+    typeWriter("> Data extraction complete.\n\n", 0, 50);
+}, 20000);
+
+setTimeout(function() {
+    typeWriter("Thank you for using our services.\n", 0, 50);
+}, 23000);
+</script>
+</body>
+</html>
