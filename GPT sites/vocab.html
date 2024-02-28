@@ -6,6 +6,10 @@
     <title>Vocabulary Quiz</title>
     <style>
         /* Your CSS styles remain unchanged */
+        body {
+            text-align: center;
+            background-color: aqua;
+        }
     </style>
 </head>
 <body>
@@ -29,25 +33,24 @@
             <p>Multiple Choice Section:</p>
             <label for="mcq1">What is the synonym of "beautiful"?</label><br>
             <input type="radio" id="mcq1a" name="mcq1" value="a">
-            <label for="mcq1a">A) Ugly</label><br>
+            <label for="mcq1a">A) Ugly</label>
             <input type="radio" id="mcq1b" name="mcq1" value="b">
-            <label for="mcq1b">B) Pretty</label><br>
+            <label for="mcq1b">B) Pretty</label>
             <input type="radio" id="mcq1c" name="mcq1" value="c">
             <label for="mcq1c">C) Average</label><br>
 
             <label for="mcq2">What is the antonym of "brave"?</label><br>
             <input type="radio" id="mcq2a" name="mcq2" value="a">
-            <label for="mcq2a">A) Fearful</label><br>
+            <label for="mcq2a">A) Fearful</label>
             <input type="radio" id="mcq2b" name="mcq2" value="b">
-            <label for="mcq2b">B) Courageous</label><br>
+            <label for="mcq2b">B) Courageous</label>
             <input type="radio" id="mcq2c" name="mcq2" value="c">
             <label for="mcq2c">C) Bold</label><br>
-
             <!-- End of Multiple Choice Section -->
 
             <input type="submit" value="Submit">
         </form>
-        <p id="result"></p>
+        <div id="result"></div>
     </div>
     <script>
         document.getElementById("quizForm").addEventListener("submit", function(event) {
@@ -61,29 +64,65 @@
             var mcq2 = document.querySelector('input[name="mcq2"]:checked');
             var resultElement = document.getElementById("result");
             var correctCount = 0;
+            var incorrectAnswers = [];
             if (answer1 === "joyful" || answer1 === "glad" || answer1 === "content") {
                 correctCount++;
+            } else {
+                document.getElementById("answer1").style.color = "red";
+                incorrectAnswers.push("happy");
             }
             if (answer2 === "small" || answer2 === "little" || answer2 === "tiny") {
                 correctCount++;
+            } else {
+                document.getElementById("answer2").style.color = "red";
+                incorrectAnswers.push("big");
             }
             if (answer3 === "courageous" || answer3 === "fearless" || answer3 === "valiant") {
                 correctCount++;
+            } else {
+                document.getElementById("answer3").style.color = "red";
+                incorrectAnswers.push("brave");
             }
             if (answer4 === "slow" || answer4 === "slack" || answer4 === "stagnant") {
                 correctCount++;
+            } else {
+                document.getElementById("answer4").style.color = "red";
+                incorrectAnswers.push("fast");
             }
             if (answer5 === "gloomy" || answer5 === "grief-stricken" || answer5 === "grieved") {
                 correctCount++;
+            } else {
+                document.getElementById("answer5").style.color = "red";
+                incorrectAnswers.push("sad");
             }
             if (mcq1 && mcq1.value === "b") {
                 correctCount++;
+            } else {
+                document.querySelectorAll('input[name="mcq1"]').forEach(function(el) {
+                    el.labels.forEach(function(label) {
+                        label.style.color = "red";
+                    });
+                });
+                incorrectAnswers.push("beautiful");
             }
             if (mcq2 && mcq2.value === "a") {
                 correctCount++;
+            } else {
+                document.querySelectorAll('input[name="mcq2"]').forEach(function(el) {
+                    el.labels.forEach(function(label) {
+                        label.style.color = "red";
+                    });
+                });
+                incorrectAnswers.push("brave");
             }
-            resultElement.textContent = "You got " + correctCount + " out of 7 questions correct!";
+            resultElement.innerHTML = "You got " + correctCount + " out of 7 questions correct!<br>";
             resultElement.style.color = "blue";
+            if (incorrectAnswers.length > 0) {
+                resultElement.innerHTML += "<br><strong>Incorrect Answers:</strong><br>";
+                for (var i = 0; i < incorrectAnswers.length; i++) {
+                    resultElement.innerHTML += "- " + incorrectAnswers[i] + "<br>";
+                }
+            }
         });
     </script>
 </body>
